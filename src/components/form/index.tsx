@@ -5,9 +5,12 @@ import { addTodo, getTodos } from "src/lib/helpers";
 export const Form = ({ setTodos }: any) => {
   const addTaskHandler = (e: any) => {
     e.preventDefault();
-    addTodo({ text: e.target.task.value, id: uuidv4(), completed: false });
-    setTodos(getTodos());
-    e.target.task.value = "";
+    const text = e.target.task.value;
+    if (text) {
+      addTodo({ text, id: uuidv4(), completed: false });
+      setTodos(getTodos());
+      e.target.task.value = "";
+    }
   };
 
   return (
