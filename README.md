@@ -1,3 +1,5 @@
 # Todo list
 
-## React, styled-components, papercss
+- React
+- styled-components
+- paperCSS
